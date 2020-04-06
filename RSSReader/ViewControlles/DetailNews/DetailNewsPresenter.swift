@@ -7,15 +7,15 @@
 //
 
 import UIKit
-protocol DetailNews: class {
+protocol DetailNewsView: class {
 }
 
 class DetailNewsPresenter: NSObject {
     
     var news: NewsDTO
-    private weak var view: DetailNews?
+    private weak var view: DetailNewsView?
     
-    init(news: NewsDTO, view: DetailNews) {
+    init(news: NewsDTO, view: DetailNewsView) {
         self.news = news
         self.view = view
     }

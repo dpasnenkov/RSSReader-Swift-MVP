@@ -44,10 +44,5 @@ class DetailNewsViewController: UIViewController {
 
 }
 
-extension DetailNewsViewController: DetailNews {
-    func configureUI(with item: Item) {
-        
-    }
-    
-    
+extension DetailNewsViewController: DetailNewsView {
 }

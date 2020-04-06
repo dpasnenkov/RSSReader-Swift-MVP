@@ -50,7 +50,7 @@ extension RSSListViewController: UITableViewDelegate {
     }
 }
 
-extension RSSListViewController: RSSList {
+extension RSSListViewController: RSSListView {
     func loadingViewHide(_ hide: Bool) {
         loadingLabel.isHidden = hide
     }

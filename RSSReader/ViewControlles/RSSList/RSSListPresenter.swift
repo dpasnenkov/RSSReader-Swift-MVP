@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-protocol RSSList: class {
+protocol RSSListView: class {
     func showDetailNews()
     func reloadData ()
     func beginUpdatesTableView()
@@ -21,7 +21,7 @@ protocol RSSList: class {
 
 class RSSListPresenter: NSObject {
     
-    private weak var view: RSSList?
+    private weak var view: RSSListView?
     var currentIndex: IndexPath?
     lazy var fetchController = DBManager.getFetchedResultsController ()
 
@@ -29,7 +29,7 @@ class RSSListPresenter: NSObject {
         return fetchController.fetchedObjects?.count ?? 0
     }
 
-    init(view: RSSList) {
+    init(view: RSSListView) {
         
         self.view = view
         RSSManager.shared.startUpdate()
@@ -52,7 +52,7 @@ class RSSListPresenter: NSObject {
         DBManager.setRead(link: news(at: newsIndex).link)
     }
     
-    func getNextPresenter (for view: DetailNews) -> DetailNewsPresenter {
+    func getNextPresenter (for view: DetailNewsView) -> DetailNewsPresenter {
         return DetailNewsPresenter(news: news(at: currentIndex!), view: view)
     }
 }
