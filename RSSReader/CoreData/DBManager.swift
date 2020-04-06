@@ -76,7 +76,7 @@ class DBManager {
     }
         
     static private func insertItem (for rssItem: RSSFeedItem, and feed: Feed, moc: NSManagedObjectContext) {
-        let item = Item(entity: Item.entity(), insertInto: moc)//Item(context: CoreDataStack.shared.mainContext)
+        let item = Item(entity: Item.entity(), insertInto: moc)
         
         item.title = rssItem.title
         item.autor = rssItem.author
@@ -92,16 +92,7 @@ class DBManager {
         item.pubDate = rssItem.pubDate
         item.wasRead = false
         item.feed = feed
-        
-//        return item
     }
-    
-//    static func getItemList () -> [Item]? {
-//        let itemfRequest : NSFetchRequest<Item> = Item.fetchRequest()
-//        itemfRequest.sortDescriptors = [NSSortDescriptor(key: "pubDate", ascending: false)]
-//
-//        return try? CoreDataStack.shared.mainContext.fetch(itemfRequest)
-//    }
     
     static func setRead (link: String?) {
         
@@ -117,6 +108,7 @@ class DBManager {
         }
         
     }
+    
     static func getFetchedResultsController () -> NSFetchedResultsController<Item> {
         let itemfRequest : NSFetchRequest<Item> = Item.fetchRequest()
         itemfRequest.sortDescriptors = [NSSortDescriptor(key: "pubDate", ascending: false)]

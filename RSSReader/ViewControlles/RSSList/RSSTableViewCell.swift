@@ -29,13 +29,8 @@ class RSSTableViewCell: UITableViewCell {
     func configure (item: NewsDTO) {
         rssTitleLabel.text = item.title
         feedTitleLabel.text = item.feed?.title
-        
-        if let dataImage = item.image {
-            rssImageView.image = UIImage(data: dataImage)
-        }
-        
+        rssImageView.image = item.image
         wasReadIndicatorView.isHidden = item.wasRead
-        
     }
 
 }

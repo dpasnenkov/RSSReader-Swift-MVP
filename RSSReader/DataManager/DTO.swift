@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct FeedDTO {
     var image: Data?
@@ -25,23 +26,38 @@ struct NewsDTO {
     var categories: String?
     var content: String?
     var descr: String?
-    var image: Data?
+    var dataImage: Data?
     var link: String?
     var pubDate: Date?
     var title: String?
     var wasRead: Bool
     var feed: FeedDTO?
+
+    var image: UIImage? {
+        guard let dataImage = self.dataImage else { return nil }
+        return UIImage(data: dataImage)
+    }
+    
+    var pubDateStr: String? {
+        guard let pubDate = self.pubDate else { return nil }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM yyyy hh:mm"
+        
+        return dateFormatter.string(from: pubDate)
+    }
+
     
     init(item: Item) {
         author = item.autor
         categories = item.categories
         content = item.content
         descr = item.descr
-        image = item.image
+        dataImage = item.image
         link = item.link
         pubDate = item.pubDate
         title = item.title
         wasRead = item.wasRead
         feed = FeedDTO(feed: item.feed)
     }
+    
 }

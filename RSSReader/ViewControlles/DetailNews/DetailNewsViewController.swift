@@ -10,7 +10,7 @@ import UIKit
 
 class DetailNewsViewController: UIViewController {
 
-    @IBOutlet weak var feedLogoImageView: UIImageView!
+//    @IBOutlet weak var feedLogoImageView: UIImageView!
     @IBOutlet weak var feedTitleLabel: UILabel!
     
     @IBOutlet weak var newsImageView: UIImageView!
@@ -24,24 +24,11 @@ class DetailNewsViewController: UIViewController {
         super.viewDidLoad()
 
         let news = presenter.news
-        if let dataImage = news.feed?.image {
-            feedLogoImageView.image = UIImage(data: dataImage)
-        } 
-        if let dataImage = news.image {
-            newsImageView.image = UIImage(data: dataImage)
-            feedTitleLabel.isHidden = true
-        } else {
-            feedTitleLabel.isHidden = false
-            feedTitleLabel.text = news.feed?.title
-        }
+        feedTitleLabel.text = news.feed?.title
+        newsImageView.image = news.image
         newsTitleLabel.text = news.title
-        
-        if let date = news.pubDate {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd MMM yyyy hh:mm"
-            newsDateLabel.text = dateFormatter.string(from: date)
-        }
-        newsDescriptionLabel.text = news.descr        
+        newsDateLabel.text = news.pubDateStr
+        newsDescriptionLabel.text = news.descr
     }
     
 
