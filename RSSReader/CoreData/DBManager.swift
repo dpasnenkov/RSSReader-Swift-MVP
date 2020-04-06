@@ -20,8 +20,9 @@ class DBManager {
          
         childMOC.parent = CoreDataStack.shared.mainContext
         
-        childMOC.perform {
-            guard let rssFeedlink = rssFeed.link else { return }
+        childMOC.perform { [weak rssFeed] in
+            guard let rssFeed = rssFeed, let rssFeedlink = rssFeed.link else { return }
+            
             let feedfRequest : NSFetchRequest<Feed> = Feed.fetchRequest()
             let predicate = NSPredicate(format: "link == %@", rssFeedlink)
             feedfRequest.predicate = predicate
