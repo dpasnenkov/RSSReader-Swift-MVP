@@ -29,6 +29,7 @@
 		1579B2AA243B0BE300198030 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579B2A9243B0BE300198030 /* SettingsViewController.swift */; };
 		1579B2AC243B0BFA00198030 /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579B2AB243B0BFA00198030 /* SettingPresenter.swift */; };
 		1579B2AE243B1AB300198030 /* RepeatingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579B2AD243B1AB300198030 /* RepeatingTimer.swift */; };
+		1579B2B2243B26B100198030 /* SettingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579B2B1243B26B100198030 /* SettingManager.swift */; };
 		92CFD4B66BD9D64404911C18 /* Pods_RSSReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FA1C071E2874345CE863E8 /* Pods_RSSReader.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		1579B2A9243B0BE300198030 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1579B2AB243B0BFA00198030 /* SettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPresenter.swift; sourceTree = "<group>"; };
 		1579B2AD243B1AB300198030 /* RepeatingTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingTimer.swift; sourceTree = "<group>"; };
+		1579B2B1243B26B100198030 /* SettingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingManager.swift; sourceTree = "<group>"; };
 		9767425DAB8DC026110FADAB /* Pods-RSSReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSSReader.debug.xcconfig"; path = "Target Support Files/Pods-RSSReader/Pods-RSSReader.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 		152FB30924390A58008C9108 /* RSSReader */ = {
 			isa = PBXGroup;
 			children = (
+				1579B2B0243B269600198030 /* SettingManager */,
 				152FB3522439F06D008C9108 /* ViewControlles */,
 				152FB3352439D5C5008C9108 /* DataManager */,
 				152FB3232439D1D2008C9108 /* CoreData */,
@@ -176,6 +179,14 @@
 				1579B2AB243B0BFA00198030 /* SettingPresenter.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		1579B2B0243B269600198030 /* SettingManager */ = {
+			isa = PBXGroup;
+			children = (
+				1579B2B1243B26B100198030 /* SettingManager.swift */,
+			);
+			path = SettingManager;
 			sourceTree = "<group>";
 		};
 		8E8FAACBA194FDFCA72B9D70 /* Frameworks */ = {
@@ -310,6 +321,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1579B2B2243B26B100198030 /* SettingManager.swift in Sources */,
 				152FB3502439DF1E008C9108 /* Item+CoreDataClass.swift in Sources */,
 				15044CEE243A4AAA00D97B65 /* DetailNewsPresenter.swift in Sources */,
 				1579B2AE243B1AB300198030 /* RepeatingTimer.swift in Sources */,

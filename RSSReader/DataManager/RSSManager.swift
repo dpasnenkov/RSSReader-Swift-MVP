@@ -14,9 +14,9 @@ class RSSManager {
     
     static let shared = RSSManager()
         
-    var repeatingTimer: RepeatingTimer?
+    private var repeatingTimer: RepeatingTimer?
     
-    func loadRSSData () {
+    private func loadRSSData () {
         
         for rssURL in rssURLs {
             
@@ -53,7 +53,7 @@ class RSSManager {
     
     func setReloadTimer()
     {
-        repeatingTimer = RepeatingTimer(timeInterval: 5)
+        repeatingTimer = RepeatingTimer(timeInterval: SettingManager.updateTimerInterval)
         
         guard let repeatingTimer = repeatingTimer else { return }
         
