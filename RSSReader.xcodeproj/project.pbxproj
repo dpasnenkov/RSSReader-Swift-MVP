@@ -28,6 +28,7 @@
 		152FB3572439F70B008C9108 /* RSSTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152FB3562439F70B008C9108 /* RSSTableViewCell.swift */; };
 		1579B2AA243B0BE300198030 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579B2A9243B0BE300198030 /* SettingsViewController.swift */; };
 		1579B2AC243B0BFA00198030 /* SettingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579B2AB243B0BFA00198030 /* SettingPresenter.swift */; };
+		1579B2AE243B1AB300198030 /* RepeatingTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1579B2AD243B1AB300198030 /* RepeatingTimer.swift */; };
 		92CFD4B66BD9D64404911C18 /* Pods_RSSReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01FA1C071E2874345CE863E8 /* Pods_RSSReader.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		152FB3562439F70B008C9108 /* RSSTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSTableViewCell.swift; sourceTree = "<group>"; };
 		1579B2A9243B0BE300198030 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1579B2AB243B0BFA00198030 /* SettingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPresenter.swift; sourceTree = "<group>"; };
+		1579B2AD243B1AB300198030 /* RepeatingTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatingTimer.swift; sourceTree = "<group>"; };
 		9767425DAB8DC026110FADAB /* Pods-RSSReader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSSReader.debug.xcconfig"; path = "Target Support Files/Pods-RSSReader/Pods-RSSReader.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +144,7 @@
 			children = (
 				152FB3362439D613008C9108 /* RSSManager.swift */,
 				15044CEF243A58DA00D97B65 /* DTO.swift */,
+				1579B2AD243B1AB300198030 /* RepeatingTimer.swift */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 			files = (
 				152FB3502439DF1E008C9108 /* Item+CoreDataClass.swift in Sources */,
 				15044CEE243A4AAA00D97B65 /* DetailNewsPresenter.swift in Sources */,
+				1579B2AE243B1AB300198030 /* RepeatingTimer.swift in Sources */,
 				15044CF0243A58DA00D97B65 /* DTO.swift in Sources */,
 				152FB3372439D613008C9108 /* RSSManager.swift in Sources */,
 				152FB3222439CC8A008C9108 /* CoreDataStack.swift in Sources */,

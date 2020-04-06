@@ -13,8 +13,11 @@ import CoreData
 class DBManager {
     
     static func update (with rssFeed: RSSFeed) {
-        let childMOC = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
         
+        print("begin update \(rssFeed.title ?? "")")
+        
+        let childMOC = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+         
         childMOC.parent = CoreDataStack.shared.mainContext
         
         childMOC.perform {
@@ -35,6 +38,8 @@ class DBManager {
                 try childMOC.save()
                 CoreDataStack.shared.mainContext.performAndWait {
                     CoreDataStack.shared.saveContext()
+                    print("end update")
+
                 }
             }
             catch {

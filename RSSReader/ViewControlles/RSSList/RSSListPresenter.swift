@@ -21,22 +21,19 @@ protocol RSSList: class {
 
 class RSSListPresenter: NSObject {
     
+    private weak var view: RSSList?
+    var currentIndex: IndexPath?
+    lazy var fetchController = DBManager.getFetchedResultsController ()
+
     var newsCount: Int {
         return fetchController.fetchedObjects?.count ?? 0
     }
-    
-    var currentIndex: IndexPath?
-    lazy var fetchController = DBManager.getFetchedResultsController ()
-    
-    private weak var view: RSSList?
-    
+
     init(view: RSSList) {
         
         self.view = view
+        RSSManager.shared.startUpdate()
 
-        let rssManager = RSSManager()
-        rssManager.configure()
-        
         super.init()
         
         fetchController.delegate = self

@@ -13,13 +13,15 @@ class RSSManager {
                            "http://www.gazeta.ru/export/rss/lenta.xml"]
     
     static let shared = RSSManager()
+        
+    var repeatingTimer: RepeatingTimer?
     
-    func configure () {
+    func loadRSSData () {
+        
         for rssURL in rssURLs {
+            
             guard let url = URL(string: rssURL) else { break }
             let parser = FeedParser (URL: url)
-            
- //           let result = parser.parse()
             
             parser.parseAsync { result in
                 switch result {
@@ -47,5 +49,23 @@ class RSSManager {
             
         }
         
+    }
+    
+    func setReloadTimer()
+    {
+        repeatingTimer = RepeatingTimer(timeInterval: 5)
+        
+        guard let repeatingTimer = repeatingTimer else { return }
+        
+        repeatingTimer.eventHandler = { [unowned self] in
+            self.loadRSSData()
+        }
+        
+        repeatingTimer.resume()
+    }
+    
+    func startUpdate () {
+        loadRSSData ()
+        setReloadTimer()
     }
 }
